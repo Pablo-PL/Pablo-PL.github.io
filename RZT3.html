@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RZT3 listopad</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Odpowiedzi na pytania</h1>
+
+    <h2>1. Notacja odwrotna polska</h2>
+    <p>
+        <strong>Konwersja wyrażenia z konwencjonalnej notacji algebraicznej na odwrotną notację polską (ONP):</strong><br>
+        Aby zamienić wyrażenie zapisu algebraicznego (infix) na odwrotną notację polską (postfix), stosuje się stos (stack) do przechowywania operatorów. W skrócie, stosujemy następujące kroki:
+    </p>
+    <ol>
+        <li>Przechodzimy po symbolach wyrażenia od lewej do prawej.</li>
+        <li>Jeśli symbol jest operandem (np. liczba lub zmienna), dodajemy go do wyniku.</li>
+        <li>Jeśli jest operatorem, odkładamy go na stos lub przenosimy z niego, jeśli na stosie są operatory o równym lub większym priorytecie.</li>
+        <li>Gdy napotkamy nawias zamykający, zdejmujemy operatory ze stosu aż do nawiasu otwierającego.</li>
+    </ol>
+    <p>Przykład: wyrażenie <code>(A + B) * C</code> w ONP zapisujemy jako <code>AB+C*</code>.</p>
+
+    <h2>2. Szyfrowanie metodą Cezara</h2>
+    <p>
+        Algorytm szyfrujący tekst metodą Cezara z przesunięciem <code>k</code> w Pythonie:
+    </p>
+    <pre><code>
+def caesar_cipher(text, key):
+    encrypted_text = ""
+    for char in text:
+        if char.isalpha():
+            offset = 65 if char.isupper() else 97
+            encrypted_text += chr((ord(char) + key - offset) % 26 + offset)
+        else:
+            encrypted_text += char
+    return encrypted_text
+
+# Przykład użycia
+text = "Przykład"
+key = 3
+print(caesar_cipher(text, key))  # Wynik: "Sbculedf"
+    </code></pre>
+
+    <h2>3. Sortowanie przez scalanie</h2>
+    <p>
+        <strong>Zalety:</strong> Stabilne, złożoność O(n log n) w każdym przypadku.<br>
+        <strong>Wady:</strong> Wymaga dodatkowej pamięci.<br>
+        <strong>Złożoność:</strong> O(n log n) w każdym przypadku.
+    </p>
+    <pre><code>
+def merge_sort(arr):
+    if len(arr) > 1:
+        mid = len(arr) // 2
+        left_half = arr[:mid]
+        right_half = arr[mid:]
+
+        merge_sort(left_half)
+        merge_sort(right_half)
+
+        i = j = k = 0
+        while i < len(left_half) and j < len(right_half):
+            if left_half[i] < right_half[j]:
+                arr[k] = left_half[i]
+                i += 1
+            else:
+                arr[k] = right_half[j]
+                j += 1
+            k += 1
+
+        while i < len(left_half):
+            arr[k] = left_half[i]
+            i += 1
+            k += 1
+
+        while j < len(right_half):
+            arr[k] = right_half[j]
+            j += 1
+            k += 1
+    </code></pre>
+
+    <h2>4. Sortowanie szybkie (Quick Sort)</h2>
+    <p>
+        <strong>Zalety:</strong> Bardzo szybkie dla większości przypadków, niewielkie wymagania pamięciowe.<br>
+        <strong>Wady:</strong> Niestabilne, w najgorszym przypadku złożoność O(n<sup>2</sup>).<br>
+        <strong>Złożoność:</strong> O(n log n) w przypadku średnim.
+    </p>
+    <pre><code>
+def quicksort(arr):
+    if len(arr) <= 1:
+        return arr
+    pivot = arr[len(arr) // 2]
+    left = [x for x in arr if x < pivot]
+    middle = [x for x in arr if x == pivot]
+    right = [x for x in arr if x > pivot]
+    return quicksort(left) + middle + quicksort(right)
+    </code></pre>
+
+    <h2>5. Urządzenia w sieci komputerowej</h2>
+    <p>
+        W sieci komputerowej:
+        <ul>
+            <li><strong>Adres IP sieci:</strong> Identyfikuje całą sieć, zwykle składa się z adresu sieciowego i maski.</li>
+            <li><strong>Maska podsieci:</strong> Określa, która część adresu IP jest identyfikatorem sieci.</li>
+            <li><strong>Adres IP interfejsu routera (bramy domyślnej):</strong> Adres routera, przez który urządzenia w sieci lokalnej komunikują się z zewnętrzną siecią.</li>
+            <li><strong>Adresy IP komputerów:</strong> Indywidualne adresy dla każdego urządzenia w sieci.</li>
+        </ul>
+    </p>
+
+    <h2>6. Czym jest: Atak DDoS, Phishing, Malware, Atak Man-in-the-middle, Zero-day exploit</h2>
+    <ul>
+        <li><strong>Atak DDoS:</strong> Atak rozproszony, który przeciąża serwer dużą liczbą żądań, powodując jego niedostępność.</li>
+        <li><strong>Phishing:</strong> Technika oszustwa, mająca na celu wyłudzenie poufnych informacji poprzez podszywanie się pod zaufaną instytucję.</li>
+        <li><strong>Malware:</strong> Złośliwe oprogramowanie stworzone w celu kradzieży danych, zakłócenia pracy systemu lub uzyskania nieautoryzowanego dostępu.</li>
+        <li><strong>Atak Man-in-the-middle:</strong> Atak, w którym napastnik przechwytuje i potencjalnie modyfikuje komunikację między dwiema stronami.</li>
+        <li><strong>Zero-day exploit:</strong> Wykorzystanie luk w oprogramowaniu, zanim producent zdążył je załatać.</li>
+    </ul>
+
+</body>
+</html>

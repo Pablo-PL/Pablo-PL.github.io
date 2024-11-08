@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RZT1 wrzesień</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Rozwiązania do zadań</h1>
+
+    <h2>1. Arytmetyka w różnych systemach numerycznych</h2>
+    <p>
+        <strong>Przykład:</strong><br>
+        Obliczmy działania na liczbach zapisanych w systemie trójkowym (101112<sub>3</sub>) i dziewiątkowym (121<sub>9</sub>).
+    </p>
+    <ul>
+        <li>Konwersja liczb:
+            <ul>
+                <li>101112<sub>3</sub> = 109<sub>10</sub></li>
+                <li>121<sub>9</sub> = 109<sub>10</sub></li>
+            </ul>
+        </li>
+        <li>Obliczenia:
+            <ul>
+                <li>Dodawanie: 109 + 109 = 218<sub>10</sub> = 100200<sub>3</sub></li>
+                <li>Odejmowanie: 109 - 109 = 0<sub>10</sub> = 0<sub>3</sub></li>
+            </ul>
+        </li>
+    </ul>
+    <p>Odpowiedzi:</p>
+    <ul>
+        <li>101112<sub>3</sub> + 121<sub>9</sub> = 100200<sub>3</sub></li>
+        <li>101112<sub>3</sub> − 121<sub>9</sub> = 0<sub>3</sub></li>
+    </ul>
+
+    <h2>2. Arytmetyka w systemie U2</h2>
+    <ul>
+        <li>Liczba 11 w U2: 00001011</li>
+        <li>Liczba -23 w U2 (dla 8-bitowej reprezentacji): 11101001</li>
+    </ul>
+    <p>Dodawanie 11 i -23:</p>
+    <pre>
+        00001011 (11)
+      + 11101001 (-23)
+      ------------
+        11110100 (wynik w U2)
+    </pre>
+    <p>Konwersja wyniku z U2 na dziesiętny: 11110100 w U2 to -12 w dziesiętnym. Odpowiedź: -12.</p>
+
+    <h2>3. Algorytm Euklidesa</h2>
+    <p>Algorytm Euklidesa służy do znajdowania największego wspólnego dzielnika dwóch liczb.</p>
+    <pre><code>
+def gcd(a, b):
+    while b != 0:
+        a, b = b, a % b
+    return a
+    </code></pre>
+
+    <h2>4. Test pierwszości liczby</h2>
+    <p>Algorytm sprawdza, czy liczba <code>n</code> jest pierwsza.</p>
+    <pre><code>
+def is_prime(n):
+    if n <= 1:
+        return False
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+    </code></pre>
+
+    <h2>5. Sito Eratostenesa</h2>
+    <p>Sito Eratostenesa to algorytm do znajdowania wszystkich liczb pierwszych do danego limitu <code>n</code>.</p>
+    <pre><code>
+def sieve_of_eratosthenes(n):
+    is_prime = [True] * (n + 1)
+    for i in range(2, int(n ** 0.5) + 1):
+        if is_prime[i]:
+            for j in range(i * i, n + 1, i):
+                is_prime[j] = False
+    return [i for i in range(2, n + 1) if is_prime[i]]
+    </code></pre>
+
+    <h2>6. Algorytm sortowania - Sortowanie przez wstawianie</h2>
+    <p>Sortowanie przez wstawianie ma złożoność O(n<sup>2</sup>) w najgorszym przypadku i O(n) w najlepszym.</p>
+    <pre><code>
+def insertion_sort(arr):
+    for i in range(1, len(arr)):
+        key = arr[i]
+        j = i - 1
+        while j >= 0 and arr[j] > key:
+            arr[j + 1] = arr[j]
+            j -= 1
+        arr[j + 1] = key
+    </code></pre>
+
+    <h2>7. Wyszukiwanie binarne</h2>
+    <p>Wyszukiwanie binarne służy do szybkiego znajdowania elementu w posortowanej liście, ma złożoność O(log n).</p>
+    <pre><code>
+def binary_search(arr, x):
+    left, right = 0, len(arr) - 1
+    while left <= right:
+        mid = (left + right) // 2
+        if arr[mid] == x:
+            return mid
+        elif arr[mid] < x:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return -1
+    </code></pre>
+
+    <h2>8. Ciąg Fibonacciego</h2>
+    <p>Algorytm oblicza <code>n</code>-ty wyraz ciągu Fibonacciego.</p>
+    <pre><code>
+def fibonacci(n):
+    if n <= 1:
+        return n
+    return fibonacci(n - 1) + fibonacci(n - 2)
+    </code></pre>
+
+    <h2>9. Algorytm szybkiego potęgowania</h2>
+    <p>Algorytm szybkiego potęgowania pozwala na szybkie obliczanie potęgi poprzez dzielenie wykładnika przez dwa.</p>
+    <pre><code>
+def fast_exponentiation(base, exponent):
+    result = 1
+    while exponent > 0:
+        if exponent % 2 == 1:
+            result *= base
+        base *= base
+        exponent //= 2
+    return result
+    </code></pre>
+
+    <h2>10. Różnica między podejściem iteracyjnym a rekurencyjnym</h2>
+    <ul>
+        <li>Iteracja:
+            <ul>
+                <li><strong>Zalety:</strong> prostota, oszczędność pamięci.</li>
+                <li><strong>Wady:</strong> mniej naturalne dla niektórych problemów.</li>
+            </ul>
+        </li>
+        <li>Rekurencja:
+            <ul>
+                <li><strong>Zalety:</strong> prostota kodu dla problemów rekurencyjnych.</li>
+                <li><strong>Wady:</strong> zużycie pamięci na stosie.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h2>11. Skróty: HTTP, TFTP, FTP, DHCP, IP, TTL, DNS</h2>
+    <ul>
+        <li><strong>HTTP:</strong> Hypertext Transfer Protocol, służy do przesyłania stron internetowych.</li>
+        <li><strong>TFTP:</strong> Trivial File Transfer Protocol, prosty protokół transferu plików.</li>
+        <li><strong>FTP:</strong> File Transfer Protocol, używany do przesyłania plików przez sieć.</li>
+        <li><strong>DHCP:</strong> Dynamic Host Configuration Protocol, przypisuje adresy IP.</li>
+        <li><strong>IP:</strong> Internet Protocol, odpowiada za adresowanie i routing w sieci.</li>
+        <li><strong>TTL:</strong> Time To Live, określa czas życia pakietu w sieci.</li>
+        <li><strong>DNS:</strong> Domain Name System, zamienia nazwy domen na adresy IP.</li>
+    </ul>
+
+    <h2>12. Schemat szyfrowania symetrycznego</h2>
+    <p>Szyfrowanie symetryczne wykorzystuje ten sam klucz do szyfrowania i deszyfrowania. Przykład: AES.</p>
+
+    <h2>13. Schemat szyfrowania asymetrycznego</h2>
+    <p>Szyfrowanie asymetryczne używa pary kluczy: publicznego i prywatnego. Przykład: RSA.</p>
+</body>
+</html>

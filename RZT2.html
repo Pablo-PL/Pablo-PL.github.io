@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RZT2 październik</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Odpowiedzi na pytania</h1>
+
+    <h2>1. Suma liczb z pliku dane.txt</h2>
+    <p>Program w Pythonie, który sumuje liczby z pliku <code>dane.txt</code> i zapisuje wynik w <code>wynik.txt</code>:</p>
+    <pre><code>
+with open("dane.txt", "r") as file:
+    total_sum = sum(int(line.strip()) for line in file)
+
+with open("wynik.txt", "w") as result_file:
+    result_file.write(str(total_sum))
+    </code></pre>
+
+    <h2>2. Konwersja liczby a z różnych systemów na dziesiętny</h2>
+    <ul>
+        <li>Binarnego na dziesiętny: <code>a = int('1010', 2)</code></li>
+        <li>Siódemkowego na dziesiętny: <code>a = int('123', 7)</code></li>
+        <li>Ósemkowego na dziesiętny: <code>a = int('17', 8)</code></li>
+        <li>Szesnastkowego na dziesiętny: <code>a = int('1A', 16)</code></li>
+    </ul>
+
+    <h2>3. Sortowanie przez wstawianie</h2>
+    <p><strong>Zalety:</strong> Dobre dla małych tablic i prawie posortowanych danych, łatwe do zaimplementowania.<br>
+       <strong>Wady:</strong> Wolne dla dużych tablic.<br>
+       <strong>Złożoność:</strong> O(n<sup>2</sup>) w najgorszym przypadku, O(n) w najlepszym przypadku (dla prawie posortowanych danych).</p>
+    <pre><code>
+def insertion_sort(arr):
+    for i in range(1, len(arr)):
+        key = arr[i]
+        j = i - 1
+        while j >= 0 and arr[j] > key:
+            arr[j + 1] = arr[j]
+            j -= 1
+        arr[j + 1] = key
+    </code></pre>
+
+    <h2>4. Sortowanie bąbelkowe</h2>
+    <p><strong>Zalety:</strong> Proste do zrozumienia i zaimplementowania.<br>
+       <strong>Wady:</strong> Bardzo nieefektywne dla dużych zbiorów danych.<br>
+       <strong>Złożoność:</strong> O(n<sup>2</sup>) w najgorszym przypadku.</p>
+    <pre><code>
+def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        for j in range(0, n - i - 1):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+    </code></pre>
+
+    <h2>5. 15 funkcji w Excelu</h2>
+    <ol>
+        <li><strong>SUMA</strong> - Sumuje wartości w zakresie.</li>
+        <li><strong>ŚREDNIA</strong> - Oblicza średnią arytmetyczną.</li>
+        <li><strong>MIN</strong> - Zwraca najmniejszą wartość.</li>
+        <li><strong>MAX</strong> - Zwraca największą wartość.</li>
+        <li><strong>LICZ.JEŻELI</strong> - Liczy komórki spełniające warunek.</li>
+        <li><strong>ZAOKR</strong> - Zaokrągla liczbę do podanej liczby miejsc.</li>
+        <li><strong>DZIŚ</strong> - Zwraca dzisiejszą datę.</li>
+        <li><strong>TERAZ</strong> - Zwraca bieżącą datę i czas.</li>
+        <li><strong>ABS</strong> - Zwraca wartość bezwzględną.</li>
+        <li><strong>JEŻELI</strong> - Zwraca wartość w zależności od spełnienia warunku.</li>
+        <li><strong>ZŁĄCZ.TEKSTY</strong> - Łączy teksty z kilku komórek.</li>
+        <li><strong>ŚREDNIA.WAŻONA</strong> - Średnia ważona.</li>
+        <li><strong>KONKATENACJA</strong> - Łączy wartości w jednym ciągu.</li>
+        <li><strong>WYSZUKAJ.PIONOWO</strong> - Wyszukuje wartość w kolumnie.</li>
+        <li><strong>ZAOKR.DO.CAŁK</strong> - Zaokrągla liczbę do najbliższej liczby całkowitej.</li>
+    </ol>
+
+    <h2>6. Wynik funkcji JEŻELI w Excelu</h2>
+    <p>Jeśli <code>A2</code> jest puste, wynikiem funkcji <code>=JEŻELI(A2 > 89; "A"; JEŻELI(A2 > 79; "B"; JEŻELI(A2 > 69; "C"; JEŻELI(A2 > 59; "D"; "F"))))</code> będzie "F", ponieważ brak wartości jest traktowany jako zero.</p>
+
+    <h2>7. Struktury danych: Stos i Kolejka</h2>
+    <ul>
+        <li><strong>Stos:</strong> LIFO (Last In, First Out), dodawanie i usuwanie elementów odbywa się na jednym końcu. Używany w nawigacji wstecz w przeglądarkach, rekurencji.</li>
+        <li><strong>Kolejka:</strong> FIFO (First In, First Out), elementy są dodawane na końcu i usuwane z początku. Używana w systemach kolejkowych (drukarka), buforach.</li>
+    </ul>
+
+    <h2>8. Struktury danych: Lista i Drzewo binarne</h2>
+    <ul>
+        <li><strong>Lista:</strong> Zbiór elementów o dowolnym typie danych, dostęp do elementów przez indeks.</li>
+        <li><strong>Drzewo binarne:</strong> Każdy węzeł ma maksymalnie dwóch potomków. Stosowane w wyszukiwaniu, sortowaniu, kompresji danych.</li>
+    </ul>
+
+    <h2>9. Kompresja stratna i bezstratna</h2>
+    <p><strong>Kompresja bezstratna</strong> - Przechowuje wszystkie dane oryginalne, po dekompresji uzyskuje się identyczny plik. Używana do kompresji tekstu i kodu.</p>
+    <p><strong>Kompresja stratna</strong> - Zmniejsza wielkość pliku, ale usuwa część informacji. Używana do kompresji obrazu, dźwięku, wideo, gdzie niektóre detale są mniej ważne.</p>
+
+    <h2>10. Dobre praktyki ochrony informacji</h2>
+    <ol>
+        <li>Używaj silnych, unikalnych haseł.</li>
+        <li>Włącz dwuetapowe uwierzytelnianie.</li>
+        <li>Regularnie zmieniaj hasła.</li>
+        <li>Nie udostępniaj haseł innym osobom.</li>
+        <li>Stosuj menedżery haseł.</li>
+        <li>Aktualizuj system i oprogramowanie.</li>
+        <li>Używaj zapory sieciowej.</li>
+        <li>Nie otwieraj nieznanych załączników e-mail.</li>
+        <li>Korzystaj z szyfrowania danych.</li>
+        <li>Stosuj kopie zapasowe danych.</li>
+        <li>Stosuj oprogramowanie antywirusowe.</li>
+        <li>Wyłącz automatyczne logowanie.</li>
+        <li>Nie korzystaj z publicznych sieci Wi-Fi bez VPN.</li>
+        <li>Używaj odpowiednich uprawnień dostępu.</li>
+        <li>Regularnie przeglądaj logi bezpieczeństwa.</li>
+    </ol>
+
+    <h2>11. Kolory w CSS i skróty</h2>
+    <p>
+        Kolory tła w CSS:<br>
+        <code>background-color: #FFFFFF;</code> - Biały<br>
+        <code>background-color: #000000;</code> - Czarny
+    </p>
+    <ul>
+        <li><strong>FTP</strong> - File Transfer Protocol, używany do przesyłania plików.</li>
+        <li><strong>SMTP</strong> - Simple Mail Transfer Protocol, używany do wysyłania e-maili.</li>
+        <li><strong>IMAP</strong> - Internet Message Access Protocol, używany do odbierania e-maili.</li>
+        <li><strong>HTTPS</strong> - Hypertext Transfer Protocol Secure, szyfrowana wersja HTTP, zapewnia bezpieczną komunikację w Internecie.</li>
+    </ul>
+
+    <h2>12. Schemat RSA</h2>
+    <p>RSA to algorytm szyfrowania asymetrycznego. Klucz publiczny jest udostępniany do szyfrowania danych, podczas gdy klucz prywatny pozostaje tajny i służy do ich odszyfrowania. RSA jest używane w bezpiecznych połączeniach sieciowych.</p>
+
+</body>
+</html>
