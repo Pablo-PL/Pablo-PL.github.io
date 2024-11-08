@@ -46,7 +46,6 @@ p, ul, ol {
     line-height: 1.7;
 }
 
-
 /* Listy (ul, ol) */
 ul, ol {
     margin-left: 20px;
@@ -107,8 +106,48 @@ footer {
     margin-top: 50px;
 }
 
+/* Stylowanie przycisku powrotu */
+.back-button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #3498db;
+    border: none;
+    border-radius: 25px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: fixed; /* Umieszczenie przycisku w prawym dolnym rogu */
+    bottom: 20px; /* Odległość od dołu ekranu */
+    right: 20px; /* Odległość od prawej krawędzi ekranu */
+    z-index: 1000; /* Zapewnia, że przycisk będzie widoczny na wierzchu */
+}
+
+/* Efekt hover i kliknięcie */
+.back-button:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.back-button:active {
+    transform: translateY(1px);
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+}
+
 /* Responsywność dla mniejszych ekranów */
 @media (max-width: 768px) {
+    .back-button {
+        position: fixed; /* Utrzymujemy przycisk jako fixed, ale na dole ekranu */
+        bottom: 20px; /* Odległość od dołu ekranu */
+        left: 50%; /* Wyśrodkowanie poziome */
+        transform: translateX(-50%); /* Przesunięcie o połowę szerokości przycisku */
+    }
+
     .container {
         padding: 15px;
     }
