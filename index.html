@@ -5,31 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wybór Zadań - RZT</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Nawigacja -->
     <header>
-        <h1>Wybór Plików z Odpowiedziami</h1>
-        <p>Wybierz odpowiedni plik z odpowiedziami na pytania od września do marca (RZT1 - RZT7).</p>
+        <nav>
+            <div class="logo">RZT - Wybór Zadań</div>
+            <ul class="nav-links">
+                <li><a href="#">Strona Główna</a></li>
+                <li><a href="#tasks">Pliki</a></li>
+                <li><a href="#about">O Projekcie</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <main>
-        <section>
-            <h2>Spis Plików</h2>
-            <ul>
-                <li><a href="RZT1.html">Wrzesień - RZT1</a></li>
-                <li><a href="RZT2.html">Październik - RZT2</a></li>
-                <li><a href="RZT3.html">Listopad - RZT3</a></li>
-                <li><a href="RZT4.html">Grudzień - RZT4</a></li>
-                <li><a href="RZT5.html">Styczeń - RZT5</a></li>
-                <li><a href="RZT6.html">Luty - RZT6</a></li>
-                <li><a href="RZT7.html">Marzec - RZT7</a></li>
-            </ul>
-        </section>
-    </main>
+    <!-- Sekcja główna -->
+    <section class="hero">
+        <h1>Witamy w serwisie RZT</h1>
+        <p>Wybierz odpowiedni plik z odpowiedziami na pytania od września do marca, aby uzyskać pełny dostęp do materiałów!</p>
+    </section>
 
-    <footer>
-        <p style="color:#808080;">© 2024 - Strona pomocy naukowej RZT</p>
-	<p style="color:#808080;">Jakub Pawłowski 4c <a href="https://github.com/Pablo-PL/Pablo-PL.github.io">Źródło i licencja</a></p>
+    <!-- Sekcja z kartami plików -->
+    <section id="tasks" class="tasks-section">
+        <h2>Pliki z odpowiedziami</h2>
+        <div class="cards-container">
+            <div class="card"><a href="RZT1.html">Wrzesień - RZT1</a></div>
+            <div class="card"><a href="RZT2.html">Październik - RZT2</a></div>
+            <div class="card"><a href="RZT3.html">Listopad - RZT3</a></div>
+            <div class="card"><a href="RZT4.html">Grudzień - RZT4</a></div>
+            <div class="card"><a href="RZT5.html">Styczeń - RZT5</a></div>
+            <div class="card"><a href="RZT6.html">Luty - RZT6</a></div>
+            <div class="card"><a href="RZT7.html">Marzec - RZT7</a></div>
+        </div>
+    </section>
+
+    <!-- Sekcja o projekcie -->
+    <section id="about" class="about-section">
+        <h2>O Projekcie</h2>
+        <p>Ten projekt jest dedykowany uczniom, aby pomóc im w szybkim dostępie do odpowiedzi na pytania RZT.</p>
+    </section>
+
+    <!-- Stopka -->
+    <footer id="contact">
+        <p>© 2024 - Strona pomocy naukowej RZT | Jakub Pawłowski 4c</p>
+        <p><a href="https://github.com/Pablo-PL/Pablo-PL.github.io">Źródło i licencja</a></p>
     </footer>
 </body>
 </html>
