@@ -1,15 +1,245 @@
 <!DOCTYPE html>
 <html lang="pl">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RZT</title>
+    <title>RZT4 grudzień</title>
     <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-<h1>Brak rozwiązań</h1>
-	<button class="back-button" onclick="window.location.href='index.html'">
-    		Powrót do strony głównej
-  	</button>
-</body>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <h1>Rozwiązania do zadań - Listopad</h1>
+    </header>
+    <main class="content">
+      <section class="answer">
+        <h2>1. Arytmetyka w różnych systemach numerycznych</h2>
+        <p>
+          <strong>Wykonanie konwersji liczby szesnastkowej z częścią dziesiętną do systemu dziesiętnego:</strong>
+        </p>
+        <p>Przykład: <code>D2C, <sub>16</sub>
+          </code> i <code>4A1 <sub>16</sub>
+          </code>
+        </p>
+        <ol>
+          <li style = "margin-left: 20px">
+            <strong>Przelicz część całkowitą liczby <code>D2C <sub>16</sub>
+              </code> na system dziesiętny: </strong>
+          </li>
+          <ul>
+            <li style = "margin-left: 20px">W systemie szesnastkowym litery reprezentują wartości liczbowe: <code>D = 13</code>, <code>2 = 2</code>, <code>C = 12</code>. </li>
+            <li style = "margin-left: 20px">Obliczamy wartość liczby <code>D2C <sub>16</sub>
+              </code> jako sumę iloczynów wartości cyfr i odpowiednich potęg liczby 16: </li>
+            <ul>
+              <li style = "margin-left: 20px">
+                <code>D2C <sub>16</sub> = (13 × 16 <sup>2</sup>) + (2 × 16 <sup>1</sup>) + (12 × 16 <sup>0</sup>) </code>
+              </li>
+              <li>
+                <code= (13 × 256) + (2 × 16) + (12 × 1)</code>
+              </li>
+              <li>
+                <code= 3328 + 32 + 12=3372></code>
+              </li>
+            </ul>
+          </ul>
+          <li style = "margin-left: 20px">
+            <strong>Przelicz część ułamkową liczby <code>4A1 <sub>16</sub>
+              </code> na system dziesiętny: </strong>
+          </li>
+          <ul>
+            <li style = "margin-left: 20px">Przypisujemy wartości liczbowe do cyfr: <code>4 = 4</code>, <code>A = 10</code>, <code>1 = 1</code>. </li>
+            <li style = "margin-left: 20px">Każdą cyfrę mnożymy przez odpowiednią potęgę liczby 16, gdzie wykładniki są ujemne, ponieważ mamy część ułamkową:</li>
+            <ul>
+              <li style = "margin-left: 20px">
+                <code>4A1 <sub>16</sub> = (4 × 16 <sup>-1</sup>) + (10 × 16 <sup>-2</sup>) + (1 × 16 <sup>-3</sup>) </code>
+              </li>
+              <li>
+                <code= (4 × 1/16) + (10 × 1/256) + (1 × 1/4096)</code>
+              </li>
+              <li>
+                <code= 0.25 + 0.0390625 + 0.000244140625</code>
+              </li>
+              <li>
+                <code= 0.289306640625></code>
+              </li>
+            </ul>
+          </ul>
+          <li style = "margin-left: 20px">
+            <strong>Dodajemy część całkowitą i część ułamkową:</strong>
+          </li>
+          <ul>
+            <li style = "margin-left: 20px">Teraz sumujemy obie części, aby uzyskać całą liczbę w systemie dziesiętnym:</li>
+            <ul>
+              <li style = "margin-left: 20px">
+                <code>3372 + 0.289306640625 = 3372.2893 <sub>10</sub>
+                </code>
+              </li>
+            </ul>
+          </ul>
+          <li style = "margin-left: 20px">
+            <strong>Wynik końcowy:</strong>
+          </li>
+          <ul>
+            <li style = "margin-left: 20px">Ostateczna wartość liczby <code>D2C,4A1 <sub>16</sub>
+              </code> w systemie dziesiętnym to <code>3372.2893 <sub>10</sub>
+              </code>. </li>
+          </ul>
+        </ol>
+      </section>
+      <section class="answer">
+        <h2>2. Wyjaśnij i opisz model TCP/IP</h2>
+        <p>
+          <strong>Model TCP/IP:</strong> Struktura komunikacji w sieciach komputerowych składająca się z czterech warstw:
+        </p>
+        <ul>
+          <li>
+            <strong>Warstwa aplikacji:</strong> Obsługuje interakcje z użytkownikiem (np. HTTP, FTP).
+          </li>
+          <li>
+            <strong>Warstwa transportowa:</strong> Zapewnia transmisję danych między aplikacjami (np. TCP, UDP).
+          </li>
+          <li>
+            <strong>Warstwa internetowa:</strong> Przesyła dane między sieciami (np. IP).
+          </li>
+          <li>
+            <strong>Warstwa dostępu do sieci:</strong> Odpowiada za fizyczną transmisję danych.
+          </li>
+        </ul>
+      </section>
+      <section class="answer">
+        <h2>3. Opisz właściwości bezpieczeństwa informacji</h2>
+        <p>
+          <strong>Główne właściwości bezpieczeństwa informacji:</strong>
+        </p>
+        <ul>
+          <li>
+            <strong>Poufność:</strong> Dane dostępne tylko dla upoważnionych osób.
+          </li>
+          <li>
+            <strong>Integralność:</strong> Dane nie mogą zostać zmienione przez osoby nieuprawnione.
+          </li>
+          <li>
+            <strong>Dostępność:</strong> Dane są dostępne, gdy są potrzebne.
+          </li>
+        </ul>
+      </section>
+      <section class="answer">
+        <h2>4. Wyjaśnij i opisz model OSI</h2>
+        <p>
+          <strong>Model OSI:</strong> Siedmiowarstwowy model komunikacji w sieciach komputerowych:
+        </p>
+        <ol>
+          <li style = "margin-left: 50px">Warstwa fizyczna</li>
+          <li style = "margin-left: 50px">Warstwa łącza danych</li>
+          <li style = "margin-left: 50px">Warstwa sieci</li>
+          <li style = "margin-left: 50px">Warstwa transportu</li>
+          <li style = "margin-left: 50px">Warstwa sesji</li>
+          <li style = "margin-left: 50px">Warstwa prezentacji</li>
+          <li style = "margin-left: 50px">Warstwa aplikacji</li>
+        </ol>
+      </section>
+      <section class="answer">
+        <h2>5. Wyjaśnij i opisz co to są sieci MAN, LAN i WAN</h2>
+        <p>
+          <strong>LAN (Local Area Network):</strong> Sieć lokalna, obejmująca niewielki obszar (np. biuro, dom).
+        </p>
+        <p>
+          <strong>MAN (Metropolitan Area Network):</strong> Sieć obejmująca większe obszary miejskie.
+        </p>
+        <p>
+          <strong>WAN (Wide Area Network):</strong> Sieć obejmująca rozległe obszary geograficzne (np. Internet).
+        </p>
+      </section>
+      <section class="answer">
+        <h2>6. Złożoność obliczeniowa</h2>
+        <p>
+          <strong>Kolejność złożoności od najniższej do najwyższej:</strong>
+        </p>
+        <ol>
+          <li>O(1)</li>
+          <li>O(logn)</li>
+          <li>O(n)</li>
+          <li>O(nlogn)</li>
+          <li>O(n <sup>2</sup>) </li>
+          <li>O(2 <sup>n</sup>) </li>
+          <li>O(n!)</li>
+        </ol>
+      </section>
+      <section class="answer">
+        <h2>7. Protokół IPv4</h2>
+        <p>
+          <strong>IPv4:</strong> Protokół internetowy używający 32-bitowych adresów, umożliwiający identyfikację urządzeń w sieci.
+        </p>
+      </section>
+      <section class="answer">
+        <h2>8. Różnice między kartą sieciową, modemem i routerem</h2>
+        <ul>
+          <li>
+            <strong>Karta sieciowa:</strong> Urządzenie pozwalające komputerowi komunikować się z siecią.
+          </li>
+          <li>
+            <strong>Modem:</strong> Urządzenie konwertujące sygnały analogowe na cyfrowe i odwrotnie.
+          </li>
+          <li>
+            <strong>Router:</strong> Urządzenie zarządzające ruchem sieciowym i łączące różne sieci.
+          </li>
+        </ul>
+      </section>
+      <section class="answer">
+        <h2>9. Kryptografia symetryczna i asymetryczna</h2>
+        <p>
+          <strong>Symetryczna:</strong> Ten sam klucz służy do szyfrowania i deszyfrowania (np. AES, DES).
+        </p>
+        <p>
+          <strong>Asymetryczna:</strong> Używa pary kluczy: publicznego i prywatnego (np. RSA, Diffie-Hellman).
+        </p>
+      </section>
+      <section class="answer">
+        <h2>10. Nośniki danych</h2>
+        <p>
+          <strong>Nośniki zewnętrzne:</strong> Dyski optyczne, pamięci flash.
+        </p>
+        <p>
+          <strong>Nośniki wewnętrzne:</strong> Dyski HDD, SSD.
+        </p>
+      </section>
+      <section class="answer">
+        <h2>11. Licencja GNU GPL</h2>
+        <p>Licencja oprogramowania open source pozwalająca na dowolne użytkowanie, modyfikację i dystrybucję z zachowaniem otwartości kodu.</p>
+      </section>
+      <section class="answer">
+        <h2>12. Typy plików graficznych</h2>
+        <ul>
+          <li>
+            <strong>JPEG, PNG, GIF:</strong> Grafika rastrowa (oparta na pikselach).
+          </li>
+          <li>
+            <strong>SVG:</strong> Grafika wektorowa (oparta na matematycznych definicjach kształtów).
+          </li>
+        </ul>
+      </section>
+      <section class="answer">
+        <h2>13. Adware, Donationware, Freeware, Shareware, Trial</h2>
+        <ul>
+          <li>
+            <strong>Adware:</strong> Oprogramowanie wyświetlające reklamy.
+          </li>
+          <li>
+            <strong>Donationware:</strong> Oprogramowanie darmowe z możliwością wsparcia autora donacją.
+          </li>
+          <li>
+            <strong>Freeware:</strong> Oprogramowanie całkowicie darmowe.
+          </li>
+          <li>
+            <strong>Shareware:</strong> Oprogramowanie udostępniane za darmo na określony czas lub z ograniczeniami.
+          </li>
+          <li>
+            <strong>Trial:</strong> Wersja próbna oprogramowania, zazwyczaj z ograniczonym czasem użytkowania.
+          </li>
+        </ul>
+      </section>
+      <button class="back-button" onclick="window.location.href='index.html'">Powrót do strony głównej</button>
+    </main>
+  </body>
 </html>
