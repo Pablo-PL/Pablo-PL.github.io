@@ -6,6 +6,53 @@
     <title>Wybór Zadań - RZT</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Styl pop-up */
+        .popup {
+            display: none; /* Na początku ukryte */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            text-align: center;
+            padding-top: 20%;
+            font-family: Arial, sans-serif;
+        }
+
+        .popup-content {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            max-width: 80%;
+            text-align: left;
+        }
+
+        .popup h2 {
+            color: #FF6347;
+        }
+
+        .popup p {
+            font-size: 18px;
+        }
+
+        .popup button {
+            background-color: #FF6347;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .popup button:hover {
+            background-color: #FF4500;
+        }
+    </style>
 </head>
 <body>
     <!-- Nawigacja -->
@@ -52,5 +99,31 @@
         <p>© 2024 - Strona pomocy naukowej RZT | Jakub Pawłowski 4c</p>
         <p><a href="https://github.com/Pablo-PL/Pablo-PL.github.io">Źródło i licencja</a></p>
     </footer>
+
+    <!-- Pop-up -->
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <h2>Uwaga! Strona jest w naprawie</h2>
+            <p>Przepraszamy, ale strona może wyglądać inaczej niż zwykle, ponieważ CSS nie ładuje się prawidłowo. Pracujemy nad naprawą.</p>
+            <p>Prosimy o cierpliwość i jeszcze raz przepraszamy za utrudnienia.</p>
+            <button onclick="closePopup()">Zamknij</button>
+        </div>
+    </div>
+
+    <script>
+        // Funkcja do otwierania pop-up, jeśli jeszcze nie został zamknięty
+        window.onload = function() {
+            if (!localStorage.getItem('popupClosed')) {
+                document.getElementById("popup").style.display = "block"; // Pokaż pop-up
+            }
+        };
+
+        // Funkcja do zamykania pop-up
+        function closePopup() {
+            document.getElementById("popup").style.display = "none"; // Ukryj pop-up
+            localStorage.setItem('popupClosed', 'true'); // Zapisz w localStorage, że pop-up został zamknięty
+        }
+    </script>
+
 </body>
 </html>
